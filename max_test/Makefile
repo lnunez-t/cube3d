@@ -6,7 +6,7 @@
 #    By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 17:14:08 by matorgue          #+#    #+#              #
-#    Updated: 2024/06/04 11:40:08 by matorgue         ###   ########.fr        #
+#    Updated: 2024/06/06 12:48:36 by matorgue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,10 @@ CFLAGS = -Werror -Wall -Wextra
 
 # Source files and object files
 SRC = main.c\
+	  ft_init.c\
+	  ft_end.c\
+	  ft_verif_maps.c\
+	  ft_verif_maps2.c\
 	  ft_open.c
 OBJ = ${SRC:.c=.o}
 

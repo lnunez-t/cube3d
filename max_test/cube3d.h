@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:21:21 by lnunez-t          #+#    #+#             */
-/*   Updated: 2024/06/04 08:53:25 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:56:38 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ typedef struct s_name
 	char	*ea;
 	char	**f;
 	char	**c;
+	char	**maps;
 }				t_name;
 
 typedef struct s_data
@@ -118,4 +119,25 @@ long long			millitimestamp(void);
 // partie parsing
 
 int	ft_open(char *name, t_data *data);
+int	ft_size_maps(t_data *data);
+
+// ft_init.c
+
+void	ft_init_name(t_data *data);
+
+// ft_end.c
+
+void	ft_end(t_data *data);
+
+// ft_verif_maps.c
+
+int	ft_verif_maps(t_data *data);
+
+// ft_verif_maps2.c
+
+int	ft_verif_main(char **map);
+int	ft_verif_first(char **map);
+int	ft_verif_mid(char **map, int k);
+int	ft_verif_last(char **map, int k);
+
 #endif

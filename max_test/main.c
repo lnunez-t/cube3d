@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 17:15:19 by matorgue          #+#    #+#             */
-/*   Updated: 2024/06/04 11:06:46 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/06 07:55:20 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	main(int ac, char **av)
 	}
 	if (ft_open(av[1], &data) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
+	ft_end(&data);
 	return (EXIT_SUCCESS);
 
 }

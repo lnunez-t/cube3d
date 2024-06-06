@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnunez-t <lnunez-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:21:21 by lnunez-t          #+#    #+#             */
-/*   Updated: 2024/06/03 16:07:55 by lnunez-t         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:33:22 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "get_next_line/get_next_line.h"
 # include "libft/libft.h"
-# include "mlx/mlx.h"
+# include "../mlx/mlx.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
 # include <fcntl.h>
@@ -76,7 +76,7 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	char			**all;
+	char			all[8][25];
 	int				rows;
 	int				cols;
 	t_pos			player;
@@ -92,7 +92,7 @@ typedef struct s_data
 	t_img			sky;
 }					t_data;
 
-void				init_map(t_data *data, char *argv);
+void				init_map(t_data *data);
 char				*check_empty_line(char *map, t_data *data);
 int					count_rows(t_data *data);
 int					handle_input(int keysym, t_data *data);

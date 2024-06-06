@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnunez-t <lnunez-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:20:38 by lnunez-t          #+#    #+#             */
-/*   Updated: 2024/06/03 13:48:45 by lnunez-t         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:33:08 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **argv)
 	data->map.player.plane_y = 0.66;
 	data->map.player.time = 0;
 	data->map.player.old_time = 0;
-	init_map(data, argv[1]);
+	init_map(data);
 	render_window(data);
 	render_map(data);
 	mlx_hook(data->win_ptr, KeyPress, KeyPressMask, handle_input, data);
