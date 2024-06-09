@@ -6,7 +6,7 @@
 #    By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/03 17:14:08 by matorgue          #+#    #+#              #
-#    Updated: 2024/06/06 12:48:36 by matorgue         ###   ########.fr        #
+#    Updated: 2024/06/07 18:43:34 by matorgue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRC = main.c\
 	  ft_end.c\
 	  ft_verif_maps.c\
 	  ft_verif_maps2.c\
+	  ft_verif_maps3.c\
+	  ft_rgb.c\
 	  ft_open.c
 OBJ = ${SRC:.c=.o}
 

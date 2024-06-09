@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 08:14:14 by matorgue          #+#    #+#             */
-/*   Updated: 2024/06/06 14:34:32 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:42:28 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_verif_maps_carac(char **maps)
 	}
 	return (0);
 }
+
 char	*ft_first_line(char **maps, int k)
 {
 	int		i;
@@ -75,6 +76,7 @@ char	*ft_first_line(char **maps, int k)
 	}
 	return (dest);
 }
+
 char	*ft_replace_line(char *src, int end)
 {
 	int		i;
@@ -85,7 +87,6 @@ char	*ft_replace_line(char *src, int end)
 	if (!dest)
 		exit(1);
 	dest[0] = '2';
-	// printf("\t%s\n",src);
 	while (src[i])
 	{
 		dest[i + 1] = src[i];
@@ -104,54 +105,8 @@ char	*ft_replace_line(char *src, int end)
 	return (dest);
 }
 
-void	ft_replace_carac(char **map)
-{
-	int	i;
-	int	k;
 
-	i = 0;
-	while (map[i])
-	{
-		k = 0;
-		while (map[i][k])
-		{
-			if (map[i][k] == ' ' || map[i][k] == '\t')
-				map[i][k] = '2';
-			if (map[i][k] == 'N' || map[i][k] == 'W' || map[i][k] == 'S' || map[i][k] == 'E')
-				map[i][k] = '0';
-			k++;
-		}
-		i++;
-	}
-}
-int	ft_verif_maps_chemin(char **maps, int i)
-{
-	char	**map_t;
 
-	map_t = malloc((i + 3) * sizeof(char *));
-	if (!map_t)
-		exit(1);
-	map_t[0] = ft_first_line(maps, 0);
-	i = 0;
-	while (maps[i])
-	{
-		map_t[i + 1] = ft_replace_line(maps[i], ft_strlen_max(maps));
-		i++;
-	}
-	map_t[i + 1] = ft_first_line(maps, i - 1);
-	map_t[i + 2] = NULL;
-	ft_replace_carac(map_t);
-	for (int k = 0; map_t[k]; k++)
-	{
-		printf("maps : %s\n", map_t[k]);
-	}
-	if (ft_verif_main(map_t) == 1)
-	{
-		ft_printf_error("PROBLEME AVEC LA MAPS MAL FERMER\n");
-		return (1);
-	}
-	return (0);
-}
 int	ft_verif_maps(t_data *data)
 {
 	if (ft_verif_maps_carac(data->name.maps) == 1)

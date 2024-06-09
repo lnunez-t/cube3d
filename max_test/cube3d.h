@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:21:21 by lnunez-t          #+#    #+#             */
-/*   Updated: 2024/06/06 12:56:38 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:44:59 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,9 @@ typedef struct s_name
 	char	*we;
 	char	*ea;
 	char	**f;
+	int		final_f[3]; // le rgb decouper et mis dans un tableau de 3 case
 	char	**c;
+	int		final_c[3];
 	char	**maps;
 }				t_name;
 
@@ -132,12 +134,25 @@ void	ft_end(t_data *data);
 // ft_verif_maps.c
 
 int	ft_verif_maps(t_data *data);
+char	*ft_first_line(char **maps, int k);
+char	*ft_replace_line(char *src, int end);
+int	ft_strlen_max(char **map);
 
 // ft_verif_maps2.c
 
+int	ft_max_line(char **map);
 int	ft_verif_main(char **map);
 int	ft_verif_first(char **map);
 int	ft_verif_mid(char **map, int k);
 int	ft_verif_last(char **map, int k);
+
+// ft_verif_maps3.c
+
+int	ft_verif_maps_chemin(char **maps, int i);
+void	ft_replace_carac(char **map);
+
+// ft_rgb.c
+
+int	ft_rgb(t_data *data);
 
 #endif

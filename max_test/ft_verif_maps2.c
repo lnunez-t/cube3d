@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:21:34 by matorgue          #+#    #+#             */
-/*   Updated: 2024/06/06 13:15:55 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:38:25 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,17 @@ int	ft_verif_mid(char **map, int k)
 			return (1);
 		if (map[k][i] == '2' && map[k + 1][i] != '2' && map[k + 1][i] != '1')
 			return (1);
+		if (map[k][i] == '2' && map[k][i + 1] != '2' && map[k][i + 1] != '1'
+			&& map[k][i + 1] != '\0')
+			return (1);
+		if (i != 0 && map[k][i] == '2' && map[k][i - 1] != '2' && map[k][i
+			- 1] != '1')
+			return (1);
 		i++;
 	}
 	return (0);
 }
+
 int	ft_verif_last(char **map, int k)
 {
 	int	i;

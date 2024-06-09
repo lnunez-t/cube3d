@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 08:19:43 by matorgue          #+#    #+#             */
-/*   Updated: 2024/06/06 09:12:07 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:37:53 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,27 +89,12 @@ void	ft_parse(int fd, t_data *data)
 		free(line);
 		line = get_next_line(fd);
 	}
-	// printf("le NO : %s\n",data->name.no);
-	// printf("le SO : %s\n",data->name.so);
-	// printf("le WE : %s\n",data->name.we);
-	// printf("le EA : %s\n",data->name.ea);
-	// for(int i = 0; data->name.f[i];i++)
-	// {
-	// 		printf("le F : %s\n",data->name.f[i]);
-	// }
-	// for(int i = 0; data->name.f[i];i++)
-	// {
-	// 		printf("le C : %s\n",data->name.c[i]);
-	// }
-	// for(int i = 0; data->name.maps[i];i++)
-	// {
-	// 	printf("maps : %s",data->name.maps[i]);
-	// }
 }
 
 int	ft_open(char *name, t_data *data)
 {
 	int	fd;
+
 	ft_init_name(data);
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
@@ -118,6 +103,12 @@ int	ft_open(char *name, t_data *data)
 		return (EXIT_FAILURE);
 	}
 	ft_parse(fd, data);
-	ft_verif_maps(data);
+	if (ft_verif_maps(data) == 1)
+		return (1);
+	if (ft_rgb(data) == 1)
+	{
+		ft_printf_error("PROBLEME AVEC LE RGB\n");
+		return (1);
+	}
 	return (EXIT_SUCCESS);
 }

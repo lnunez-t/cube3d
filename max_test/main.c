@@ -6,7 +6,7 @@
 /*   By: matorgue <warthog2603@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 17:15:19 by matorgue          #+#    #+#             */
-/*   Updated: 2024/06/06 07:55:20 by matorgue         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:56:04 by matorgue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ int	verif_path_cub(char *name)
 	i = ft_strlen(name);
 	if (i <= 4)
 		return (EXIT_FAILURE);
-	if (name[i - 4] == '.' && name[i - 3] == 'c' && name[i - 2] == 'u' && name[i
-		- 1] == 'b')
+	if (name[i - 4] == '.' && name[i - 3] == 'c' && name[i - 2] == 'u' \
+		&& name[i - 1] == 'b')
 		return (EXIT_SUCCESS);
 	return (EXIT_FAILURE);
 }
+
 int	verif_path(char *name)
 {
 	int	i;
@@ -60,9 +61,10 @@ int	verif_path(char *name)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
+
 int	main(int ac, char **av)
 {
-	t_data data;
+	t_data	data;
 
 	if (ac != 2)
 	{
@@ -71,12 +73,11 @@ int	main(int ac, char **av)
 	}
 	if (verif_path(av[1]) == 1)
 	{
-		ft_printf_error("ERREUR AVEC LE PATH : %s\n",av[1]);
+		ft_printf_error("ERREUR AVEC LE PATH : %s\n", av[1]);
 		return (EXIT_FAILURE);
 	}
 	if (ft_open(av[1], &data) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 	ft_end(&data);
 	return (EXIT_SUCCESS);
-
 }
