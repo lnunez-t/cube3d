@@ -47,3 +47,9 @@ Getting Started
 	1.	Test the original inspiration: Wolfenstein 3D.
 	2.	Clone the repository and build the project using the provided Makefile.
 	3.	Launch the program with a .cub configuration file as the argument.
+
+ ## Contributors
+
+Thanks my amazing contributor for his help!
+
+- [@maxmart26](https://github.com/maxmart26)
