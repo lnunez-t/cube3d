@@ -50,6 +50,6 @@ Getting Started
 
  ## Contributors
 
-Thanks my amazing contributor for his help!
+Thanks to my amazing contributor for his help!
 
 - [@maxmart26](https://github.com/maxmart26)
